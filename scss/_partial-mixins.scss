@@ -1,0 +1,64 @@
+/// BEM mixin used for blocks
+@mixin block($block) {
+  &.#{$block} {
+    @content;
+  }
+}
+
+/// BEM mixin used for elements
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// BEM mixin used for modifiers
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/// Progressive enhancement mixin designed to
+/// target devices greater than the specified
+/// size.
+@mixin minwidth($minw) {
+  @media (min-width: ($minw/16+em)) {
+    @content;
+  }
+}
+
+/// Progressive enhancement mixin designed to
+/// target devices greater than the specified
+/// size.
+@mixin minheight($minw) {
+  @media (min-height: ($minw/16+em)) {
+    @content;
+  }
+}
+
+/// Graceful degradation mixin designed to
+/// target devices less than the specified size.
+@mixin maxwidth($maxw) {
+  @media (max-width: ($maxw/16+em)) {
+    @content;
+  }
+}
+
+/// Graceful degradation mixin designed to
+/// target devices less than the specified size.
+@mixin maxheight($maxw) {
+  @media (max-height: ($maxw/16+em)) {
+    @content;
+  }
+}
+
+/// Clearfix mixin designed to prevent collapsed parents
+/// of floating elements.
+@mixin clearfix {
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}

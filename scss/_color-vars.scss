@@ -1,0 +1,55 @@
+/**
+  Author:                   Noah Teshima
+  Date created:             July 8, 2018
+  Date modified:            August 8, 2018
+  Project:                  businessCard
+  Repository:               n/a
+*/
+
+/*-----------*/
+/*Breakpoints*/
+/*-----------*/
+
+/*min breakpoint*/
+$breakpoint-all: 0;
+/*phone breakpoint*/
+$breakpoint-phone: 320;
+/*tablet breakpoint*/
+$breakpoint-tablet: 480;
+/*desktop breakpoint*/
+$breakpoint-desktop: 720;
+
+/*Hex Codes*/
+
+//dark red
+$color-dark-red: #AB0064;
+//darker red
+$color-darker-red: #8A2E64;
+//black
+$color-black: #000000;
+//white
+$color-white: #ffffff;
+//magenta
+$color-magenta: #FF0C9A;
+//cream
+$color-cream: #FFEDF8;
+//instagram
+$color-instagram: #DD2A7B;
+//github
+$color-github: #6E5494;
+//npm
+$color-npm: #C12127;
+
+/*RGBA*/
+
+//dark red
+$rgba-dark-red: rgba(171, 0, 100, 1);
+//darker red
+$rgba-darker-red: rgba(138, 46, 100, 1);
+//black
+$rgba-black: rgba(0, 0, 0, 1);
+//magenta
+$rgba-magenta: rgba(255, 12, 154, 1);
+//cream
+$rgba-cream: rgba(255, 237, 248, 1);
+
