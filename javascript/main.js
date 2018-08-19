@@ -1,9 +1,7 @@
-$(document).ready(function () {
-  preloadCheckHero();
-});
+$(document).on("load", preloadCheckHero());
 
 function uncoverHero() {
-  setTimeout(() => $('.header').addClass('header--active'),
+  setTimeout(() => $('.header').removeClass('header--disabled'),
     500);
 }
 
