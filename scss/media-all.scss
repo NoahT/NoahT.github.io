@@ -133,11 +133,11 @@
   transition-duration: 1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  opacity: 0;
+  opacity: 1;
 
-  /// .header--active
-  @include modifier("active") {
-    opacity: 1;
+  /// .header--disabled
+  @include modifier("disabled") {
+    opacity: 0;
   }
 
   /// .header__title
