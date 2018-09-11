@@ -10,9 +10,9 @@
     -webkit-transition-property: opacity;
     transition-property: opacity;
     -webkit-transition-duration: .5s;
-            transition-duration: .5s;
+    transition-duration: .5s;
     -webkit-transition-timing-function: ease-in-out;
-            transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
 
     &:hover {
       opacity: .5;
@@ -27,12 +27,18 @@
     display: block;
     float: right;
     font-weight: inherit;
+    font-style: italic;
+  }
+
+  @include element("anchor") {
+    font-style: italic;
   }
 }
 
 /// .block-list
 @include block("block-list") {
-  list-style: decimal;
+  display: block;
+  clear: both;
 
   /// .block-list__item
   @include element("item") {
@@ -45,6 +51,60 @@
       }
     }
   }
+}
+
+/// .body
+@include block("body") {
+  /// .body__background
+  @include element("background") {
+    width: 100%;
+    height: 10vh;
+    z-index: 0;
+
+    display: block;
+
+    /// .body__background--raise
+    @include modifier("raise") {
+      -webkit-transition-property: height;
+      transition-property: height;
+      -webkit-transition-duration: 1s;
+      transition-duration: 1s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-timing-function: ease-in-out;
+
+      
+      &:hover {
+        height: 10%;
+      }
+    }
+  }
+
+  /// body__background-lower
+  @include element("background-lower") {
+    //@include minwidth($breakpoint-tablet) {
+      width: 100%;
+      height: 100%;
+      
+      -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+
+      background-color: hsla(200, 100%, 75%, 1);
+    //}
+  }
+
+  /// .body__background-upper
+  @include element("background-upper") {
+    //@include minwidth($breakpoint-tablet) {
+      width: 100%;
+      height: 100%;
+
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+
+      background-color: hsla(200, 100%, 75%, 1);
+    //}
+  }
+
 }
 
 /// .header
@@ -61,6 +121,13 @@
   @include element("info") {
 
   }
+}
+
+@include block("hr") {
+  width: 90%;
+  height: .2rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 /// .inline-list

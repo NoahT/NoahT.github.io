@@ -19,6 +19,13 @@
   }
 }
 
+// set content to given style
+@mixin select($style) {
+  &.#{$style} { 
+    @content;
+  }
+}
+
 /// Progressive enhancement mixin designed to
 /// target devices greater than the specified
 /// size.
