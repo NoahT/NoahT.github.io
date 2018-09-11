@@ -10,7 +10,11 @@
   <link rel="stylesheet" type="text/css" href="./css/bem-grid-system.css">
   <link rel="stylesheet" type="text/css" href="./css/media-all.css">
 </head>
-<body>
+<body class="body">
+  <div class="body__background">
+    <div class="body__background-upper">
+    </div>
+  </div>
   <div class="grid">
     <div class="grid__row">
       <div class="grid__item grid__item--1 grid--hidden-phone grid--hidden-tablet">
@@ -34,7 +38,7 @@
 
         <hr class="hr">
 
-        <article class="article grid__column">
+        <article class="article">
           <section class="article__section grid__item">
             <h2 class="article__header">
               Experience
@@ -185,7 +189,7 @@
 
                 <ul class="block-list">
                   <li class="block-list__item">
-                    Swing Application designed to make monochromatic, complementary, or analogous color palettes based off the colors presented in an image. Uses <a href="https://poynton.ca/PDFs/coloureq.pdf" target="blank">Adrian Ford's matrix transformation function</a> for converting between RGB and HSL color spaces.
+                    Swing Application designed to make monochromatic, complementary, or analogous color palettes based off the colors presented in an image. Uses <a href="https://poynton.ca/PDFs/coloureq.pdf" target="blank" class="anchor article__anchor anchor--opaque">Adrian Ford's matrix transformation function</a> for converting between RGB and HSL color spaces.
                   </li>
                 </ul>
               </li>
@@ -204,12 +208,33 @@
             </ul>
           </section>
 
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Honors, Awards
+            </h2>
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  MiraCosta President's List <span class="article__timeline">Fall 2017, Spring 2018</span>
+                </h3>
+              </li>
+            </ul>
+          </section>
+
         </article>
       </div>
       <div class="grid__item grid__item--1 grid--hidden-phone grid--hidden-tablet">
       </div>
     </div>
   </div>
+  <div class="body__background">
+    <div class="body__background-lower">
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </body>
 </html>
 
