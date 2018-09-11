@@ -4,81 +4,238 @@
   <title>Personal Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Noah Teshima">
-  <meta name="description" content="Business Card Layout">
-  <meta name="keywords" content="landing, css, scss, gulp, frontend, responsive, noah, teshima">
+  <meta name="description" content="CS113 Resume">
 
   <link rel="stylesheet" type="text/css" href="./css/media-reset.css">
   <link rel="stylesheet" type="text/css" href="./css/bem-grid-system.css">
   <link rel="stylesheet" type="text/css" href="./css/media-all.css">
-  <link rel="stylesheet" type="text/css" href="./css/media-fonts.css">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 </head>
-<body>
-  <header class="grid header header--disabled">
-    <div class="grid__column">
-      <!--center content vertically in header-->
-      <div class="grid__item grid__item--center-vertical">
-        <!--nested column-->
-        <div class="grid__column">
-          <!--name-->
-          <div class="grid__item grid__item--1 grid__item--center-horizontal">
-            <h1 class="header__title">Noah Teshima</h1>
-          </div>
-
-          <!--contact information-->
-          <ul class="grid__item grid__item--1 grid__item--center-horizontal list">
-            <li class="list__item--inline list__item--bullet">
-              <a href="mailto:noah.teshima@gmail.com">noah.teshima@gmail.com</a>
-            </li>
-            <li class="list__item--inline">
+<body class="body">
+  <div class="body__background">
+    <div class="body__background-upper">
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid__row">
+      <div class="grid__item grid__item--1 grid--hidden-phone grid--hidden-tablet">
+      </div>
+      <div class="grid__item grid__item--4">
+        <header class="header grid__item grid__item--center-horizontal">
+          <h1 class="header__title">
+            Noah Teshima
+          </h1>
+          <ul class="inline-list">
+            <li class="inline-list__item inline-list__item--bullet">
               (858) 888 5510
             </li>
+            <li class="inline-list__item">
+              <a href="mailto:noah.teshima@gmail.com" class="anchor anchor--opaque">
+                noah.teshima@gmail.com
+              </a>
+            </li>
           </ul>
+        </header>
 
-          <!--social/information-->
-          <div class="grid__item grid__item--3 grid__item--center-horizontal">
-            <!--add row behavior-->
-            <div class="grid__row">
-              <!--space div-->
-              <div class="grid__item grid__item--1">
-              </div>
+        <hr class="hr">
 
-              <!--social media-->
-              <div class="grid__item grid__item--1">
-                <ul class="grid__column list list--right list--big social border border--right">
-                  <li class="grid__item grid__item--1 grid__item--center-vertical">
-                    <a href="https://www.instagram.com/noah.teshima/" target="blank" class="socicon socicon-instagram social__instagram social__instagram--hover"></a>
+        <article class="article">
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Experience
+            </h2>
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  High School Tutoring <span class="article__timeline">2-2015 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    AP Computer Science A, Principles
                   </li>
-                  <li class="grid__item grid__item--1 grid__item--center-vertical">
-                    <a href="https://github.com/NoahT" target="blank" class="socicon socicon-github social__github social__github--hover"></a>
+                  <li class="block-list__item">
+                    AP Calculus AB, BC
                   </li>
-                  <li class="grid__item grid__item--1 grid__item--center-vertical">
-                    <a href="https://www.npmjs.com/settings/noah-teshima/profile" target="blank" class="socicon socicon-npm social__npm social__npm--hover"></a>
+                  <li class="block-list__item">
+                    Integrated Mathematics
                   </li>
                 </ul>
-              </div>
+              </li>
 
-              <!--about site-->
-              <article class="grid__item grid__item--3 article border--top">
-                <p class="article__paragraph">
-                  Hey there, I'm Noah. I'm currently studying as an undergraduate in computer science. In my free time, I practice frontend design. Go to my Github/NPM profile in order to see a portfolio of my work. Alternatively, follow me on Instagram for funsies.
-                </p>
-              </article>
+              <li class="block-list__item">
 
-              <!--space div-->
-              <div class="grid__item grid__item--1">
-              </div>
-            </div>
-          </div>
-        </div>
+                <h3 class="article__subheader">
+                  STEM Tutoring <span class="article__timeline">8-2018 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Calculus and Analytic Geometry I, II
+                  </li>
+                  <li class="block-list__item">
+                    Java Programming I, II
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+          </section>
+
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Education
+            </h2>
+
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  Canyon Crest Academy <span class="article__timeline">8-2013 - 6-2017</span>
+                </h3>
+              </li>
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  Miracosta College <span class="article__timeline">6-2017 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Computer Science Major
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Skills
+            </h2>
+
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  Java SE 7 <span class="article__timeline">7-2014 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Knowledge of OOP design patterns
+                  </li>
+                  <li class="block-list__item">
+                    Experience developing applications in Swing
+                  </li>
+                </ul>
+              </li>
+
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  JavaScript <span class="article__timeline">1-2016 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Experience using ECMAScript 6 standards
+                  </li>
+                  <li class="block-list__item">
+                    Experience with jQuery for frontend design
+                  </li>
+                  <li class="block-list__item">
+                    Knowledge of search queries in YQL
+                  </li>
+                </ul>
+              </li>
+
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  HTML5, CSS3 <span class="article__timeline">12-2015 - Present</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Experience with frontend responsive design strategies
+                  </li>
+                  <li class="block-list__item">
+                    Experience with writing SCSS
+                  </li>
+                  <li class="block-list__item">
+                    Knowledge of search queries in YQL
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Past Projects
+            </h2>
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  JSE7 Search <span class="article__timeline">11-2017</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Website developed for filtering through Java Standard Edition 7 documentation. Uses asynchronous GET requests and Google's custom search JSON API for parsing.
+                  </li>
+                </ul>
+              </li>
+
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  Picture Palette <span class="article__timeline">5-2018</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    Swing Application designed to make monochromatic, complementary, or analogous color palettes based off the colors presented in an image. Uses <a href="https://poynton.ca/PDFs/coloureq.pdf" target="blank" class="anchor article__anchor anchor--opaque">Adrian Ford's matrix transformation function</a> for converting between RGB and HSL color spaces.
+                  </li>
+                </ul>
+              </li>
+
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  FlexGrid <span class="article__timeline">7-2017</span>
+                </h3>
+
+                <ul class="block-list">
+                  <li class="block-list__item">
+                    SCSS framework used to simplify the responsive design process. Uses BEM naming conventions and a mobile-first design strategy.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section class="article__section grid__item">
+            <h2 class="article__header">
+              Honors, Awards
+            </h2>
+            <ul class="block-list">
+              <li class="block-list__item">
+                <h3 class="article__subheader">
+                  MiraCosta President's List <span class="article__timeline">Fall 2017, Spring 2018</span>
+                </h3>
+              </li>
+            </ul>
+          </section>
+
+        </article>
+      </div>
+      <div class="grid__item grid__item--1 grid--hidden-phone grid--hidden-tablet">
       </div>
     </div>
-
-    <div class="header__hero">
+  </div>
+  <div class="body__background">
+    <div class="body__background-lower">
     </div>
-  </header>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="./javascript/main.js"></script>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </body>
 </html>
+
 

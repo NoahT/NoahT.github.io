@@ -1,166 +1,149 @@
-@import "breakpoint-vars";
-@import "color-vars";
 @import "partial-mixins";
+@import "color-vars";
+@import "breakpoint-vars";
 
-/// .list
-@include block("list") {
-  /// .list__item
-  @include element("item") {
-    /// .list__item--inline
-    @include modifier("inline") {
-      display: inline;
+/// .anchor
+@include block("anchor") {
+  color: inherit;
+  /// .anchor--opaque
+  @include modifier("opaque") {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      opacity: .5;
     }
+  }
+}
 
-    /// .list__item--bullet
+/// .article
+@include block("article") {
+  /// .article__timeline
+  @include element("timeline") {
+    display: block;
+    float: right;
+    font-weight: inherit;
+    font-style: italic;
+  }
+
+  @include element("anchor") {
+    font-style: italic;
+  }
+}
+
+/// .block-list
+@include block("block-list") {
+  display: block;
+  clear: both;
+
+  /// .block-list__item
+  @include element("item") {
+    display: block;
+    margin-left: 1rem;
+    /// .block-list__item--bullet
+    @include modifier("bullet") {
+      &:before {
+        content: '\2022';
+      }
+    }
+  }
+}
+
+/// .body
+@include block("body") {
+  /// .body__background
+  @include element("background") {
+    width: 100%;
+    height: 10vh;
+    z-index: 0;
+
+    display: block;
+
+    /// .body__background--raise
+    @include modifier("raise") {
+      -webkit-transition-property: height;
+      transition-property: height;
+      -webkit-transition-duration: 1s;
+      transition-duration: 1s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-timing-function: ease-in-out;
+
+      
+      &:hover {
+        height: 10%;
+      }
+    }
+  }
+
+  /// body__background-lower
+  @include element("background-lower") {
+    //@include minwidth($breakpoint-tablet) {
+      width: 100%;
+      height: 100%;
+      
+      -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+
+      background-color: hsla(200, 100%, 75%, 1);
+    //}
+  }
+
+  /// .body__background-upper
+  @include element("background-upper") {
+    //@include minwidth($breakpoint-tablet) {
+      width: 100%;
+      height: 100%;
+
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+
+      background-color: hsla(200, 100%, 75%, 1);
+    //}
+  }
+
+}
+
+/// .header
+@include block("header") {
+  margin-top: .5rem;
+
+  /// .header__title
+  @include element("title") {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  /// .header__info
+  @include element("info") {
+
+  }
+}
+
+@include block("hr") {
+  width: 90%;
+  height: .2rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+/// .inline-list
+@include block("inline-list") {
+  list-style: none;
+
+  /// .inline-list__item
+  @include element("item") {
+    display: inline;
+
+    // .inline-list__item--bullet
     @include modifier("bullet") {
       &:after {
         content: '\2022';
       }
     }
   }
-
-  /// .list--right
-  @include modifier("right") {
-    text-align: right;
-  }
-
-  /// .list--big
-  @include modifier("big") {
-    font-size: 1.5rem;
-  }
 }
 
-/// .social
-@include block("social") {
-  /// .social__instagram
-  @include element("instagram") {
-    /// .social__instagram--hover
-    @include modifier("hover") {
-      &:before {
-        -webkit-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: .5s;
-        transition-duration: .5s;
-        -webkit-transition-timing-function: ease-in-out;
-        transition-timing-function: ease-in-out;
-        color: inherit;
-      }
-
-      &:hover:before {
-        color: $color-instagram;
-      }
-    }
-  }
-
-  /// .social__github
-  @include element("github") {
-    /// .social__github--hover
-    @include modifier("hover") {
-      &:before {
-        -webkit-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: .5s;
-        transition-duration: .5s;
-        -webkit-transition-timing-function: ease-in-out;
-        transition-timing-function: ease-in-out;
-        color: inherit;
-      }
-
-      &:hover:before {
-        color: $color-github;
-      }
-    }
-  }
-
-  /// .social__npm
-  @include element("npm") {
-    /// .social__npm--hover
-    @include modifier("hover") {
-      &:before {
-        -webkit-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: .5s;
-        transition-duration: .5s;
-        -webkit-transition-timing-function: ease-in-out;
-        transition-timing-function: ease-in-out;
-        color: inherit;
-      }
-
-      &:hover:before {
-        color: $color-npm;
-      }
-    }
-  }
-}
-
-/// .border
-@include block("border") {
-  /// .border--right
-  @include modifier("right") {
-    border-right: $border-small solid $color-black;
-  }
-
-  /// .border--top
-  @include modifier("top") {
-    border-top: $border-small solid $color-black;
-  }
-
-  /// .border--bottom
-  @include modifier("bottom") {
-    border-bottom: $border-small solid $color-black;
-  }
-}
-
-/// .article
-@include block("article") {
-  /// .article__paragraph
-  @include element("paragraph") {
-    text-indent: .5rem;
-    
-    &:first-letter {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-/// .header
-@include block("header") {
-  font-family: "Work Sans", sans-serif;
-
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 1s;
-  transition-duration: 1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  opacity: 1;
-
-  /// .header--disabled
-  @include modifier("disabled") {
-    opacity: 0;
-  }
-
-  /// .header__title
-  @include element("title") {
-    font-size: 2rem;
-  }
-
-  /// .header__hero
-  @include element("hero") {
-    &:before {
-      z-index: 0;
-      content: '';
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(250, 250, 250, 1))), url("../images/hero.jpg");
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(250, 250, 250, 1) 100%), url("../images/hero.jpg");
-      background-size: cover;
-      background-position: bottom;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-  }
-}
